@@ -1,4 +1,4 @@
-//0c6439742e82c79ffb2c8a90d67522a586b8d5a2ead8996902556f43
+//0c6439742e82c79ffb2c8a90d67
 var express = require('express')
 var bodyParser = require('body-parser')
 var app = express()
@@ -16,13 +16,13 @@ var port = process.env.PORT || 8080;
 const MongoClient = require('mongodb').MongoClient
 
 const TextRazor = require('textrazor')
-const textRazor = new TextRazor('0c6439742e82c79ffb2c8a90d67522a586b8d5a2ead8996902556f43');
+const textRazor = new TextRazor('<key>');
 
 //const options = { extractors: 'topics'}
 
 var db;
 /////////////////////////////////////
-MongoClient.connect('mongodb://nickcm:Shivers1@ds139969.mlab.com:39969/stories-database', (err, client) => {
+MongoClient.connect('mongodb://nickcm:<password>@ds139969.mlab.com:39969/stories-database', (err, client) => {
         if (err) return console.log(err);
         db = client.db('stories-database');
         var server = http.listen(port,() => {
@@ -83,3 +83,5 @@ app.post('/story', (req, res) => {
 
     res.redirect('/')
 })
+
+//522a586b8d5a2ead8996902556f43
